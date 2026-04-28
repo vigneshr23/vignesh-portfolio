@@ -1,0 +1,1379 @@
+# SDE-3 / Architect 36-Week Deep Mastery Plan
+## Quality Over Speed · Engagement Over Variety · Consistent Progress Every 4 Weeks
+
+---
+
+## PHILOSOPHY SHIFT: 12 Weeks vs 36 Weeks
+
+This is not a cram plan. It is a **skills transformation plan**.
+
+The 12-week version treated mastery as a destination you sprint to.
+This 36-week version treats mastery as a process of **deep internalization** — where you solve fewer problems but understand each one more thoroughly, where you design fewer systems but can explain every design decision under pressure, where you see the same concept from 4 different angles before calling it learned.
+
+**The core tradeoff you're making:**
+- ❌ Not: cover everything quickly
+- ✅ Yes: deeply own 20 patterns/concepts that you can execute perfectly under interview pressure
+
+**What engagement and consistency means concretely:**
+- Same schedule every week (your brain learns the ritual, not just the content)
+- Every topic is touched 3 times before you move on (read → solve → teach)
+- You feel forward momentum every 4 weeks (measurable gate, not just "I studied")
+- You don't context-switch too fast (patterns stay open for 2 weeks, not 2 days)
+
+---
+
+## THE 36-WEEK ARCHITECTURE
+
+```
+Weeks 1–4:    Foundation Layer    — DSA fundamentals + LLD orientation
+Weeks 5–8:    Pattern 1 Depth     — Two Pointers, Sliding Window, HashMap
+Weeks 9–12:   Pattern 2 Depth     — Trees (all variants) + Basic LLD systems
+Weeks 13–16:  Pattern 3 + Gate 1  — DP + Graphs + First mock interviews (Easy/Medium companies)
+Weeks 17–20:  LLD Mastery         — SOLID internalized, 6 systems designed + coded
+Weeks 21–24:  Advanced DSA + LLD  — Heaps, Backtracking, Binary Search + LLD deep review
+Weeks 25–28:  HLD Foundations     — 4 core concepts, 3 introductory system designs
+Weeks 29–32:  HLD Mastery + Gate 2 — 8 case studies, system design under pressure, FAANG-ready
+Weeks 33–36:  Consolidation       — Mock grind, weak spot elimination, behavioral, offers
+```
+
+### Milestone Map
+
+| Checkpoint | Week | Capability | Companies to Target |
+|---|---|---|---|
+| Gate 1 | Week 16 | DSA Easy/Medium fluent + 3 LLD systems + HLD vocabulary | Tier 3–4: Indian product, Series B–C startups, service companies with tech interviews |
+| Gate 2 | Week 28 | All DSA patterns + 6 LLD systems + 6 HLD systems | Tier 2: Flipkart, Razorpay, Zepto, Groww, Meesho |
+| Rock Solid | Week 32 | Full pipeline fluency + 3 projects + mock-tested | Tier 1: Stripe, Airbnb, Uber, Amazon, Google |
+| Landing | Week 36 | Competing offers in hand | Negotiate from strength |
+
+---
+
+## WEEKLY TIME BUDGET
+
+### Base Weekly Schedule (Fixed Across All 36 Weeks)
+
+| Day | Block | Activity Type | Hours | Note |
+|---|---|---|---|---|
+| Monday | Evening | DSA problem or LLD/HLD reading (depends on phase) | 1.5 | Office day — lighter |
+| Tuesday | Afternoon (WFH) | Core deep work: learning + implementation | 2.5 | Best focus block |
+| Wednesday | Evening | DSA problem or system sketch | 1.5 | Office day — medium |
+| Thursday | Afternoon (WFH) | Core deep work: coding or design | 2.5 | Best focus block |
+| Friday | Evening | Review + document + light | 1.0 | Low cognitive load |
+| Saturday | Morning | **Primary deep work: projects + mock drills** | 3.0 | Sacred — never cancel |
+| Sunday | Afternoon | Weak spot review + plan next week | 1.5 | Forward planning |
+| **Total** | | | **13.5 hrs/week** | |
+
+### How the Daily Format Changes by Phase
+
+| Phase | Mon/Wed/Fri | Tue/Thu (WFH) | Saturday |
+|---|---|---|---|
+| Weeks 1–4 | DSA basics | Concept reading + 2 problems | DSA drill + LLD orientation |
+| Weeks 5–16 | 1 DSA problem | Concept + 2 problems + implementation | DSA mock + project session |
+| Weeks 17–24 | LLD verbal drill | LLD design + code | LLD mock + project |
+| Weeks 25–32 | HLD reading/sketch | HLD case study | HLD mock + project |
+| Weeks 33–36 | Behavioral + review | Full pipeline mock | 3-round simulation |
+
+---
+
+## PART 1: THE LEARNING LOOP (Every Topic Uses This)
+
+The reason most engineers fail interviews despite "studying for months": they see a concept once, solve 10 problems, move on. The brain hasn't formed deep pathways.
+
+**This plan uses a 3-touch model:**
+
+```
+Touch 1 — UNDERSTAND (Week A, Day 1)
+  Read the concept. Draw it. Explain it to yourself in your own words.
+  Don't solve problems yet. Just internalize the model.
+  Time: 45–60 minutes
+
+Touch 2 — APPLY (Week A, Days 2–5 + Week A Saturday)
+  Solve 6–8 problems from Easy to Hard using this pattern.
+  For each problem: 
+    - Identify why the pattern applies before touching code
+    - Write brute force first (even if you know the optimal)
+    - State complexity before verifying
+    - Note the specific variant of the pattern
+
+Touch 3 — TEACH (Week B, Day 1)
+  Before starting new content: write a 1-page explanation of
+  last week's pattern as if teaching a junior engineer.
+  Then solve 2 more problems from the pattern to test recall.
+  Time: 45 minutes
+  
+Why it works: The act of teaching forces retrieval, not recognition.
+Recognition fools you into thinking you've mastered something.
+Retrieval is what happens in an interview.
+```
+
+---
+
+## PART 2: WEEKS 1–4 — FOUNDATION LAYER
+
+### Objective
+Build the base infrastructure: time complexity intuition, array manipulation fluency, and exposure to what LLD interviews actually look like. No pressure to "complete" anything. Build the habit.
+
+### Month 1 Theme: **"Learn how to learn this material"**
+
+---
+
+### Week 1: Time Complexity + Arrays + Rhythm Establishment
+
+**Why start here?** Every DSA answer requires you to state time and space complexity confidently. If this is shaky, everything built on top of it is shaky. Scaler covers this in Advanced DSA Foundations.
+
+#### Monday (1.5 hrs)
+- **Read:** Time complexity formal definition. O notation. Best/average/worst case.
+- **Draw:** Complexity hierarchy chart from your memory: O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ)
+- **Drill:** For 10 code snippets, write TC without running them. (Scaler: Time Complexity lecture)
+
+#### Tuesday (2.5 hrs)
+- **Read:** Arrays — prefix sum technique (0:30)
+- **Solve Problem 1:** Running Sum of 1D Array (LC 1480) — Easy. Build the prefix sum array.
+- **Solve Problem 2:** Range Sum Query — Immutable (LC 303) — Easy. Apply prefix sum.
+- **Solve Problem 3:** Subarray Sum Equals K (LC 560) — Medium. Prefix sum + HashMap.
+- **Write-up:** "Prefix sum converts O(n) range queries to O(1) by pre-computing cumulative sums."
+
+#### Wednesday (1.5 hrs)
+- **Review:** Yesterday's 3 problems. For each: restate the pattern, restate TC/SC.
+- **Solve Problem 4:** Product of Array Except Self (LC 238) — Medium. Left pass + right pass. No division.
+
+#### Thursday (2.5 hrs)
+- **Read:** Two-dimensional arrays, matrix traversal patterns (0:30)
+- **Solve Problem 5:** Spiral Matrix (LC 54) — Medium. Four boundary pointers.
+- **Solve Problem 6:** Set Matrix Zeroes (LC 73) — Medium. In-place modification.
+- **Solve Problem 7:** Rotate Image (LC 48) — Medium. Transpose + reverse.
+
+#### Friday (1.0 hr)
+- **Document:** Write complexity for all 7 problems solved this week.
+- **Preview:** Read LLD chapter in Scaler or watch 20 min of OOP lecture. Just exposure.
+
+#### Saturday (3.0 hrs)
+- **Hour 1:** Timed drill — re-solve problems 1, 3, 5 (20 min each, no looking)
+- **Hour 1.5:** Read: "What is Low-Level Design?" Watch 1 LLD introductory lecture from Scaler: Foundations of OOD
+- **Hour 0.5:** Write: What is the difference between a class and an interface? Why does it matter?
+
+#### Sunday (1.5 hrs)
+- **Week 1 review:** Were you consistent? What slipped?
+- **Plan Week 2:** Write exactly which problems you'll solve, which concepts you'll read.
+- **Write complexity:** From memory, complexity of: linear search, binary search, bubble sort, merge sort, hash lookup.
+
+**Week 1 Target:** 7 problems. TC/SC stated for all. LLD vocabulary introduced.
+
+---
+
+### Week 2: Sorting + Two Pointers Introduction
+
+**Why sorting here?** Sorting underpins binary search, deduplication, and many optimal solutions. Interviewers expect you to call "sort first, then two pointers" fluently.
+
+#### Monday (1.5 hrs)
+- **Teach Week 1:** Without notes, explain prefix sum in 3 minutes. Write the template.
+- **Solve:** Find Pivot Index (LC 724) — Easy. Variant of prefix sum.
+
+#### Tuesday (2.5 hrs)
+- **Read:** Merge Sort (divide and conquer) + Quick Sort (partition). Understand both. (Scaler: Sorting 1 & 2)
+- **Implement:** Write Merge Sort from scratch in your primary language.
+- **Solve Problem 8:** Sort Colors (LC 75) — Medium. Dutch national flag algorithm.
+
+#### Wednesday (1.5 hrs)
+- **Read:** Two Pointers — the convergent pattern (both ends toward center)
+- **Solve Problem 9:** Two Sum II (LC 167) — Easy. Sorted + two pointers.
+- **Solve Problem 10:** Valid Palindrome (LC 125) — Easy. Two pointer from both ends.
+
+#### Thursday (2.5 hrs)
+- **Read:** Two Pointers — the same-direction pattern (slow/fast)
+- **Solve Problem 11:** 3Sum (LC 15) — Medium. Sort + outer loop + two pointers. Handle dedup.
+- **Solve Problem 12:** 4Sum (LC 18) — Medium. Two outer loops + two pointers.
+- **Reflection:** "3Sum and 4Sum are the same technique at different scales. The pattern is: fix the first N-2 elements, reduce to 2Sum."
+
+#### Friday (1.0 hr)
+- **Document:** Write the two-pointer template for convergent AND same-direction.
+- **Complexity review:** 3Sum is O(n²). Why? Can it be better? (No — any algorithm that enumerates pairs is at least O(n²).)
+
+#### Saturday (3.0 hrs)
+- **Hour 1:** Timed drill — 3Sum from scratch (25 min timer). 4Sum from scratch (25 min timer).
+- **Hour 1:** LLD: Read OOP 1 & 2 from Scaler (Access Modifiers, Constructors, Inheritance)
+- **Hour 1:** LLD: Implement a basic class hierarchy — Animal → Dog, Cat. Add polymorphism.
+
+#### Sunday (1.5 hrs)
+- **Teach:** Write two pointers concept as if explaining to a junior dev. Both variants.
+- **Plan Week 3:** Sliding Window + Bit Manipulation.
+
+**Week 2 Target:** 12 problems total. Two pointer template written and owned. LLD OOP basics started.
+
+---
+
+### Week 3: Sliding Window + Bit Manipulation
+
+**Why sliding window now?** It's the natural extension of two pointers for subarray problems. Together with HashMap (Week 5), these 3 techniques handle ~48% of phone screen questions.
+
+#### Monday (1.5 hrs)
+- **Teach Week 2:** Explain two pointers out loud. Draw 3Sum execution on a small array.
+- **Read:** Sliding Window — fixed vs dynamic. When the window expands vs contracts.
+
+#### Tuesday (2.5 hrs)
+- **Solve Problem 13:** Maximum Average Subarray I (LC 643) — Easy. Fixed window of size k.
+- **Solve Problem 14:** Longest Substring Without Repeating Characters (LC 3) — Medium. Dynamic window + HashMap.
+- **Solve Problem 15:** Minimum Window Substring (LC 76) — Hard. Two frequency maps. Shrink condition.
+
+#### Wednesday (1.5 hrs)
+- **Review:** Minimum Window Substring. Can you re-derive it without notes?
+- **Read:** Bit manipulation basics — AND, OR, XOR, shift operators. (Scaler: Bit Manipulation)
+
+#### Thursday (2.5 hrs)
+- **Solve Problem 16:** Single Number (LC 136) — Easy. XOR cancels duplicates.
+- **Solve Problem 17:** Number of 1 Bits (LC 191) — Easy. n & (n-1) trick.
+- **Solve Problem 18:** Counting Bits (LC 338) — Easy. DP on bits.
+- **LLD Reading:** Interfaces and Abstract Classes — when to use each. Real examples.
+
+#### Friday (1.0 hr)
+- **Document:** Sliding window template (fixed + dynamic). When to choose each.
+- **Write:** The XOR identity: x ^ x = 0, x ^ 0 = x. Where does this apply?
+
+#### Saturday (3.0 hrs)
+- **Hour 1:** Timed: Minimum Size Subarray Sum (LC 209) — Medium (20 min). Max Consecutive Ones III (LC 1004) — Medium (25 min).
+- **Hour 1:** LLD: OOP 3 & 4 — Interfaces, Abstract Classes. Implement a Shape hierarchy.
+- **Hour 1:** LLD: Write IShape interface. Implement Circle, Rectangle. Add area() method.
+
+#### Sunday (1.5 hrs)
+- **Teach:** Write sliding window concept as if teaching a junior. Include the template code.
+- **Plan Week 4:** Recursion + Hashing. Then Month 1 review.
+
+**Week 3 Target:** 18 problems. Sliding window template owned. LLD OOP interface patterns started.
+
+---
+
+### Week 4: Recursion + Hashing + Month 1 Checkpoint
+
+**Why recursion before trees?** Trees are recursive data structures. Without a solid recursive mental model first, tree problems feel magical. This week makes recursion feel mechanical.
+
+#### Monday (1.5 hrs)
+- **Teach Week 3:** Sliding window template from memory.
+- **Read:** Recursion — call stack, base case, recursive case. Draw call stack for factorial(5).
+
+#### Tuesday (2.5 hrs)
+- **Solve Problem 19:** Fibonacci (with memoization) — implement both naive and memoized. Understand why naïve is O(2ⁿ) and memoized is O(n).
+- **Solve Problem 20:** Power of Two (LC 231) — Easy recursion.
+- **Solve Problem 21:** Reverse String (LC 344) — Easy. In-place recursion.
+- **Read:** Hashing — collision handling, load factor, O(1) amortized access.
+
+#### Wednesday (1.5 hrs)
+- **Solve Problem 22:** Two Sum (LC 1) — Easy. The canonical HashMap problem.
+- **Solve Problem 23:** Group Anagrams (LC 49) — Medium. Canonical key via sorted string.
+
+#### Thursday (2.5 hrs)
+- **Solve Problem 24:** Longest Consecutive Sequence (LC 128) — Medium. HashMap for O(n).
+- **Solve Problem 25:** Top K Frequent Elements (LC 347) — Medium. HashMap + sort or bucket sort.
+- **LLD:** Design Patterns intro — Singleton, Factory (Scaler: Design Patterns lecture 1 & 2)
+
+#### Friday (1.0 hr)
+- **Month 1 review prep:** Go through all 25 problems. Can you state pattern + TC for each?
+- **LLD:** Write Singleton pattern. What makes it thread-safe? What are the downsides?
+
+#### Saturday (3.0 hrs)
+- **Hour 1 — MONTH 1 CHECKPOINT MOCK:**
+  - Timed: 2 problems, 45 minutes. No hints.
+  - Problem A: Trapping Rain Water (LC 42) — Hard two pointers
+  - Problem B: Minimum Window Substring revisit — clean solution
+- **Hour 1:** Debrief. Did you identify patterns in < 2 min? State TC immediately?
+- **Hour 1:** LLD: Implement Parking Lot — just the class diagram and Vehicle hierarchy today.
+
+#### Sunday (1.5 hrs)
+- **MONTH 1 SELF-ASSESSMENT:**
+
+| Skill | Not Yet | Developing | Solid |
+|---|---|---|---|
+| State TC/SC for any solution immediately | ☐ | ☐ | ☐ |
+| Two Pointers (convergent) | ☐ | ☐ | ☐ |
+| Two Pointers (same direction) | ☐ | ☐ | ☐ |
+| Sliding Window (dynamic) | ☐ | ☐ | ☐ |
+| HashMap pattern | ☐ | ☐ | ☐ |
+| Prefix Sum | ☐ | ☐ | ☐ |
+| Basic Recursion | ☐ | ☐ | ☐ |
+| OOP: Interfaces + Inheritance | ☐ | ☐ | ☐ |
+
+**Gate:** 6+ "Solid" = proceed normally. < 6: next week adds 2 review problems per day before new content.
+
+---
+
+## PART 3: WEEKS 5–16 — CORE DSA DEPTH + LLD FOUNDATIONS
+### Months 2–4 · Deep Pattern Mastery · Gate 1 at Week 16
+
+---
+
+### Weeks 5–6: Trees — DFS, BFS, Recursion on Trees
+
+**Why 2 full weeks on trees?** Trees are the most asked data structure at SDE-3 level and the conceptual foundation for: backtracking, graph traversal, divide-and-conquer, and system design hierarchies. Two weeks here pays dividends in 6 other topics.
+
+**Touch 1 (Week 5 Monday):** Draw a binary tree. Trace inorder, preorder, postorder by hand for 4 different trees before solving any problem. Understand: preorder = "process on the way down", postorder = "process on the way up". This distinction alone solves 60% of tree problems.
+
+**Week 5 Problem Set:**
+
+| # | Problem | Pattern | Difficulty | Key Insight |
+|---|---|---|---|---|
+| 1 | Maximum Depth of Binary Tree (LC 104) | DFS post-order | Easy | 1 + max(left, right) |
+| 2 | Symmetric Tree (LC 101) | DFS — mirror check | Easy | left.left == right.right && left.right == right.left |
+| 3 | Path Sum (LC 112) | DFS pre-order | Easy | Pass remaining target down |
+| 4 | Path Sum II (LC 113) | DFS + backtracking | Medium | Add on way down, remove on way back up |
+| 5 | Binary Tree Level Order Traversal (LC 102) | BFS | Medium | Queue size = level size |
+| 6 | Binary Tree Right Side View (LC 199) | BFS or DFS right-first | Medium | Last node per BFS level |
+
+**Week 6 Problem Set:**
+
+| # | Problem | Pattern | Difficulty | Key Insight |
+|---|---|---|---|---|
+| 7 | Validate Binary Search Tree (LC 98) | DFS with bounds | Medium | Pass (min, max) constraints down — not just parent comparison |
+| 8 | Lowest Common Ancestor — BST (LC 235) | BST property | Medium | Both values < root → go left. Straddling → root is LCA |
+| 9 | Lowest Common Ancestor — Binary Tree (LC 236) | DFS post-order | Medium | Bubble up — when both sides return non-null, current is LCA |
+| 10 | Kth Smallest in BST (LC 230) | Inorder traversal | Medium | In-order = sorted sequence; stop at kth |
+| 11 | Binary Tree Maximum Path Sum (LC 124) | DFS post-order + global max | Hard | Return max one-sided path to parent; update global with full path through current |
+| 12 | Serialize and Deserialize Binary Tree (LC 297) | BFS encoding | Hard | Null markers preserve structure |
+
+**Week 6 Teach-Back (Sunday):** Write "The Return Value Problem in Tree DFS" — a 1-page explanation of when to return a value up the call stack vs when to update a global variable. This is the hardest conceptual distinction in tree problems.
+
+**LLD Parallel Track (Week 5–6):**
+- Week 5 Thursday: Code Parking Lot core (VehicleType, ParkingSpot, ParkingLevel)
+- Week 6 Thursday: Add PricingStrategy (Strategy pattern) and entry/exit ticket logic
+- Week 5–6 Saturday: Scaler Machine Coding lectures — Parking Lot walkthrough
+
+---
+
+### Weeks 7–8: Dynamic Programming — 1D → 2D → Knapsack
+
+**Why DP gets 2 weeks immediately after trees?** DP is the most feared and most frequently tested pattern at SDE-3. Two weeks of consistent immersion (rather than one rushed week) is the difference between "I've seen DP" and "I can derive any DP solution."
+
+**The 3-Step DP Method (internalize before touching any problem):**
+```
+Step 1 — Define the state: what does dp[i] represent?
+Step 2 — Write the recurrence: dp[i] = f(dp[i-1], dp[i-2], ...)
+Step 3 — Identify the base case: dp[0] = ?, dp[1] = ?
+
+If you cannot do all 3 before coding, you don't understand the problem yet.
+```
+
+**Touch 1 (Week 7 Monday):** Draw the recursion tree for Fibonacci. Count how many times fib(3) is computed. Then draw the memoized version. This one exercise explains the entire value of DP.
+
+**Week 7 Problem Set — 1D DP:**
+
+| # | Problem | State Definition | Recurrence | Difficulty |
+|---|---|---|---|---|
+| 1 | Climbing Stairs (LC 70) | dp[i] = ways to reach step i | dp[i] = dp[i-1] + dp[i-2] | Easy |
+| 2 | House Robber (LC 198) | dp[i] = max money up to house i | dp[i] = max(dp[i-1], dp[i-2] + nums[i]) | Medium |
+| 3 | Coin Change (LC 322) | dp[i] = min coins to make amount i | dp[i] = min(dp[i - coin] + 1) for each coin | Medium |
+| 4 | Longest Increasing Subsequence (LC 300) | dp[i] = LIS ending at index i | dp[i] = max(dp[j] + 1) for all j < i where nums[j] < nums[i] | Medium |
+| 5 | Word Break (LC 139) | dp[i] = can we form s[0..i]? | dp[i] = any dp[j] where s[j..i] is in dict | Medium |
+
+**Week 8 Problem Set — 2D DP + Knapsack:**
+
+| # | Problem | State Definition | Recurrence | Difficulty |
+|---|---|---|---|---|
+| 6 | Unique Paths (LC 62) | dp[i][j] = paths to reach cell (i,j) | dp[i][j] = dp[i-1][j] + dp[i][j-1] | Medium |
+| 7 | Edit Distance (LC 72) | dp[i][j] = edits to convert s1[0..i] to s2[0..j] | dp[i][j] = min(insert, delete, replace) | Hard |
+| 8 | Longest Common Subsequence (LC 1143) | dp[i][j] = LCS of s1[0..i], s2[0..j] | dp[i][j] = dp[i-1][j-1]+1 if match, else max(dp[i-1][j], dp[i][j-1]) | Medium |
+| 9 | 0/1 Knapsack (classic) | dp[i][w] = max value using first i items with weight limit w | dp[i][w] = max(dp[i-1][w], dp[i-1][w-wt[i]] + val[i]) | Medium |
+| 10 | Partition Equal Subset Sum (LC 416) | dp[i][s] = can we make sum s with first i items? | dp[i][s] = dp[i-1][s] or dp[i-1][s-nums[i]] | Medium |
+
+**Week 8 Teach-Back:** "1D DP vs 2D DP — how do you know which you need?" Write a decision rule. (Answer: if the state depends on 2 independent variables simultaneously, you need 2D. If state only depends on previous state(s) in one dimension, 1D suffices.)
+
+**LLD Parallel Track (Week 7–8):**
+- Week 7 Thursday: Design Splitwise — entities, balance computation
+- Week 8 Thursday: Code Splitwise — addExpense(), getUserBalance(), settlement greedy algorithm
+- Week 7–8 Saturday: Scaler Design Principles: SOLID principles deep read (all 5)
+
+---
+
+### Weeks 9–10: Graphs — BFS, DFS, Topological Sort
+
+**Why graphs after DP?** Graph traversal (BFS/DFS) uses the same recursive/iterative patterns from trees, and topological sort is essentially DP on a directed acyclic graph. By now, both mental models are warm.
+
+**The Key Graph Insight to internalize before Week 9:**
+> "A grid is a graph. Every cell is a node. Adjacent cells are edges. BFS on a grid = shortest path in unweighted graph. DFS on a grid = exhaustive exploration."
+
+This single insight handles 40% of graph problems at interview level.
+
+**Week 9 Problem Set — BFS + DFS on Graphs:**
+
+| # | Problem | Pattern | Why This Problem |
+|---|---|---|---|
+| 1 | Number of Islands (LC 200) | DFS/BFS flood fill | Grid = graph. Most common entry-level graph problem. |
+| 2 | Max Area of Island (LC 695) | DFS with return value | Same as Islands but with accumulation |
+| 3 | Rotting Oranges (LC 994) | Multi-source BFS | Start BFS from all sources simultaneously |
+| 4 | Pacific Atlantic Water Flow (LC 417) | Reverse BFS from both boundaries | Bidirectional reachability |
+| 5 | Word Ladder (LC 127) | BFS on state space | Each word = node, edges = 1-char difference |
+
+**Week 10 Problem Set — Topological Sort:**
+
+| # | Problem | Pattern | Why This Problem |
+|---|---|---|---|
+| 6 | Course Schedule (LC 207) | Kahn's algorithm | Cycle detection via topological sort |
+| 7 | Course Schedule II (LC 210) | Kahn's + result tracking | Return actual topological order |
+| 8 | Alien Dictionary (LC 269) | Topological sort on characters | Build char dependency graph |
+| 9 | Find Eventual Safe States (LC 802) | Reverse topological | Nodes from which all paths lead to terminal |
+| 10 | Minimum Height Trees (LC 310) | Leaf pruning BFS | Iterative topological to find centers |
+
+**LLD Parallel Track (Week 9–10):**
+- Week 9 Thursday: SOLID violations — find them in real code. Fix SRP and OCP violations.
+- Week 10 Thursday: Design Elevator System (missing from Scaler) — State Machine pattern
+- Week 9–10 Saturday: Code Elevator System — state transitions, request queue
+
+---
+
+### Weeks 11–12: Binary Search — Standard + On Answer
+
+**Why 2 weeks on binary search?** Standard binary search is trivially known. "Binary search on answer" is a mental model that most engineers never develop — and it appears in 1 in 8 interview problems. Two weeks: 1 for standard, 1 for the paradigm shift.
+
+**Week 11 — Standard Binary Search:**
+
+| # | Problem | Variant | Key Insight |
+|---|---|---|---|
+| 1 | Binary Search (LC 704) | Standard | Template: lo, hi, mid, while lo ≤ hi |
+| 2 | Search in Rotated Sorted Array (LC 33) | Modified BS | Identify which half is sorted |
+| 3 | Find First and Last Position (LC 34) | Left/right boundary | Two separate binary searches |
+| 4 | Search a 2D Matrix (LC 74) | 2D flattened | Treat as 1D array |
+| 5 | Find Peak Element (LC 162) | Local property | If mid < mid+1, peak is to the right |
+
+**Week 12 — Binary Search on Answer:**
+
+The paradigm: you binary search not on an array but on the **answer space**. The key is writing a predicate: "given answer X, is it achievable?"
+
+| # | Problem | Predicate | Key Insight |
+|---|---|---|---|
+| 6 | Koko Eating Bananas (LC 875) | can_finish(speed, h)? | Binary search on speed ∈ [1, max_pile] |
+| 7 | Minimum Days to Make Bouquets (LC 1482) | can_make(days)? | Binary search on days |
+| 8 | Capacity to Ship in D Days (LC 1011) | can_ship(capacity, d)? | Binary search on capacity |
+| 9 | Sqrt(x) (LC 69) | floor_sqrt(x) | Binary search on answer ∈ [1, x] |
+| 10 | Split Array Largest Sum (LC 410) | can_split(max_sum, m)? | Binary search on max allowed subarray sum |
+
+**LLD Parallel Track (Week 11–12):**
+- Week 11 Thursday: Code BookMyShow — Seat, Show, optimistic locking for concurrent booking
+- Week 12 Thursday: Design Notification System — Channel Strategy pattern (INotificationChannel → Email, SMS, Push)
+- Week 11–12 Saturday: Scaler Applied Design — BookMyShow walkthrough
+
+---
+
+### Weeks 13–14: Heaps + Backtracking
+
+**Heaps** are the most underused pattern in frontend engineers' problem-solving vocabulary. **Backtracking** tests recursive depth. Both appear in SDE-3 hard rounds.
+
+**Week 13 — Heaps / Priority Queues:**
+
+| # | Problem | Pattern | Key Insight |
+|---|---|---|---|
+| 1 | Kth Largest Element (LC 215) | Min-heap of size k | Maintain k-element heap, top = kth largest |
+| 2 | Top K Frequent Elements (LC 347) | HashMap + heap | Frequency map, then extract top K |
+| 3 | Merge K Sorted Lists (LC 23) | K-way merge heap | Always process minimum across all lists |
+| 4 | Find Median from Data Stream (LC 295) | Two heaps | Max-heap (lower half) + min-heap (upper half) |
+| 5 | Sliding Window Maximum (LC 239) | Deque (monotonic) | Deque stores indices of useful candidates |
+
+**Week 14 — Backtracking:**
+
+The template before solving any backtracking problem:
+```
+function backtrack(state, choices):
+    if is_solution(state):
+        add state to results
+        return
+    for each choice in choices:
+        make_choice(choice)
+        backtrack(new_state, remaining_choices)
+        undo_choice(choice)       ← THIS is what makes it backtracking
+```
+
+| # | Problem | State | Choices | Undo |
+|---|---|---|---|---|
+| 1 | Subsets (LC 78) | Current subset | Include/exclude next element | Pop last element |
+| 2 | Permutations (LC 46) | Current permutation | Any unused element | Remove added element |
+| 3 | Combination Sum (LC 39) | Current combo + remaining target | Next element (allow repeat) | Pop last element |
+| 4 | Palindrome Partitioning (LC 131) | Current partition | All valid palindrome prefixes | Pop last partition |
+| 5 | N-Queens (LC 51) | Board state | Valid columns per row | Remove queen |
+
+**LLD Parallel Track (Week 13–14):**
+- Week 13 Thursday: Code Notification System — Builder for complex notifications
+- Week 14 Thursday: Design Chess — Piece hierarchy, move validation engine
+- Week 13–14 Saturday: Scaler Machine Coding practice — Chess
+
+---
+
+### Weeks 15–16: Pattern Consolidation + GATE 1
+
+**Week 15 is not new content.** It is deliberate consolidation of everything from Weeks 1–14. This is the week that separates engineers who go into Gate 1 interviews with confidence from those who feel like frauds.
+
+**Week 15 — Consolidation Week:**
+
+**Monday:** Teach-back day. Without notes, write 1 page on each: Two Pointers, Sliding Window, HashMap. What problems does each solve? What's the template?
+
+**Tuesday:** Pattern recognition sprint. Take 10 random problems from your solved list. Cover the solution. In 90 seconds per problem: identify the pattern, write the TC, write 1 edge case.
+
+**Wednesday:** DP teach-back. Without notes, write the 3-step DP method and apply it to Coin Change.
+
+**Thursday:** Graphs + Trees teach-back. Draw: BFS template, DFS template, topological sort (Kahn's). Apply each to a small example.
+
+**Friday:** LLD teach-back. Without notes: draw UML for Parking Lot. State the 3 design patterns used.
+
+**Saturday:** Full mock — 90 minutes:
+- 45 min: 2 DSA problems (1 Medium DP, 1 Medium Tree)
+- 45 min: LLD design — "Design a Library Management System" (new system, apply your Parking Lot learnings)
+
+**Sunday:** Gate 1 self-assessment.
+
+### GATE 1 ASSESSMENT — Week 16
+
+**Test conditions:** One 3-hour session, real interview conditions, no notes.
+
+**Round 1 (45 min) — DSA:**
+- Problem 1: Two Sum variant (Easy — 10 min)
+- Problem 2: Level Order Traversal (Medium — 20 min)
+- Problem 3: Binary Search on Answer (Medium — 25 min)
+Threshold: 3/3 solved with TC stated. 2/3 minimum to proceed.
+
+**Round 2 (45 min) — LLD:**
+- "Design a Vending Machine" — clarify, class diagram, code core flow
+Threshold: Class hierarchy correct, 1 pattern identified, core flow coded.
+
+**Round 3 (30 min) — HLD Vocabulary:**
+- "What is eventual consistency? Give me an example."
+- "What would you cache in a social media app?"
+- "What's the difference between SQL and NoSQL? When do you choose each?"
+Threshold: 3/3 answered with specifics, not generalities.
+
+**Gate 1 Pass Criteria:**
+- ✅ DSA: 2+/3 problems solved correctly in time
+- ✅ LLD: Class hierarchy + 1 pattern + core flow
+- ✅ HLD Vocabulary: 3/3 questions answered substantively
+
+**Companies to target after Gate 1:** Series B–C startups with technical processes, Indian IT service companies with product-type roles, smaller product companies (< 500 engineers).
+
+---
+
+## PART 4: WEEKS 17–24 — LLD MASTERY + ADVANCED DSA
+
+### Month 5 (Weeks 17–20): Full LLD Mastery
+
+**The goal of this month:** By Week 20, you should be able to design any of the 6 core LLD systems verbally in 10 minutes with no preparation, code the core flow in 35 minutes, and handle any extensibility challenge with OCP-compliant code.
+
+This is not about adding new systems. It is about going deeper into the ones you already know.
+
+---
+
+### Week 17: SOLID Deep Internalization
+
+**Why one full week on SOLID before continuing systems?** Most engineers can recite the acronym. Almost none can identify SOLID violations in their own code within 60 seconds, or demonstrate OCP live under interview pressure. This week closes that gap.
+
+**Daily Format:**
+
+**Monday — SRP:** Write a class that violates SRP. Then fix it. Apply SRP to one of your portfolio projects' React components. Where does business logic leak into UI? That's an SRP violation.
+
+**Tuesday — OCP + DIP:** 
+- OCP: Take your Parking Lot PricingStrategy. Add a new pricing type without touching existing code. Show how.
+- DIP: Refactor any class where you have `new StripePayment()` inside a service. Inject it instead.
+
+**Wednesday — LSP + ISP:**
+- LSP: Read the Square-Rectangle problem. Implement it wrong (Square extends Rectangle with setWidth causing unexpected behavior). Then fix it with a common Shape interface.
+- ISP: Take a fat interface (e.g., IVehicle with 8 methods). Split it into IFuelable, IElectric, IParkable.
+
+**Thursday — Full SOLID audit:**
+- Open Parking Lot code. Find and document every SOLID violation.
+- Fix all of them. Write a summary: "I changed X because Y violated Z principle."
+
+**Friday — LLD interview meta-skill:**
+Read: How to structure your LLD interview answer (clarify → entities → relationships → patterns → code → extensibility → edge cases). Practice this arc verbally for Parking Lot.
+
+**Saturday:**
+- Hour 1: Verbal Parking Lot with SOLID audit narration ("I'm using Strategy here because…")
+- Hour 2: Verbal Splitwise with the settlement algorithm explained
+- Hour 1: Read Scaler Design Patterns: Decorator + Builder
+
+---
+
+### Week 18: Design Patterns Deep Work
+
+**This week: make design patterns feel automatic, not deliberate.**
+
+The test: for each of the 6 systems you've coded, you should be able to identify which patterns you used and why — in 30 seconds per system — without needing to think.
+
+**Monday — Factory + Abstract Factory:**
+- Factory: Create a VehicleFactory that returns different vehicle types.
+- Abstract Factory: Extend to support different factory families (e.g., ElectricVehicleFactory vs FuelVehicleFactory).
+- Solve: How would you add a HybridVehicle without modifying VehicleFactory?
+
+**Tuesday — Observer deep dive:**
+- Implement a publish-subscribe system from scratch (20 lines).
+- Apply to Splitwise: when an expense is added, notify all group members.
+- Apply to BookMyShow: when a show is added, notify users with watchlist preferences.
+
+**Wednesday — Strategy + Decorator:**
+- Strategy: Add DiscountedPricingStrategy to Parking Lot (wraps existing strategy, applies discount).
+- Wait — that's actually Decorator. Discuss: when is it Decorator vs Strategy?
+
+**Thursday — New system: Chess (or ATM System if you prefer):**
+- Apply Factory (PieceFactory), Command (UndoableMove), State (piece state).
+- Don't code the full chess engine. Code: Piece hierarchy, Board, MoveValidator, CommandHistory.
+
+**Friday:**
+- Write: "Pattern Picker" for your 6 systems. One row per system. Columns: system, patterns used, why each pattern.
+
+**Saturday:**
+- Hour 1.5: Code Chess/ATM — core flow only (45 min), no chess logic
+- Hour 1.5: Scaler Machine Coding: review Splitwise + BookMyShow lectures
+
+---
+
+### Week 19: LLD Mock Intensive
+
+**Three mocks this week with graded feedback.**
+
+**Monday — Mock 1 — Parking Lot (known system):**
+- Timer: 60 minutes.
+- Conditions: blank file, no notes.
+- Graded immediately after.
+
+**Tuesday — Debrief + Upgrade:**
+- Grade Monday's mock using the rubric.
+- Fix every dimension scored < 3.
+- Add anything you forgot (edge cases, thread safety, extensibility).
+
+**Wednesday — Mock 2 — BookMyShow (known system):**
+- Timer: 60 minutes.
+- Conditions: blank file, no notes.
+- Focus: concurrency, optimistic locking.
+
+**Thursday — Mock 3 — Library Management System (new system):**
+- Apply: SOLID + patterns (Builder for Book construction, Observer for overdue notifications, Strategy for late fee calculation).
+- Timer: 60 minutes.
+
+**Friday:**
+- Compare all 3 mocks. What dimension was consistently weakest?
+- Write a 1-paragraph fix plan.
+
+**Saturday:**
+- Hour 1.5: Re-code your weakest mock result from scratch.
+- Hour 1.5: Rate Limiter project — TokenBucketRateLimiter (Month 2 project, Week 19 session)
+
+---
+
+### Week 20: LLD Consolidation + Month 2 Checkpoint
+
+**Sunday Month 2 Checkpoint (at start of Week 20):**
+
+| Dimension | Not Yet | Developing | Solid |
+|---|---|---|---|
+| Clarify requirements (5 scoped questions) | ☐ | ☐ | ☐ |
+| Class hierarchy (SOLID-compliant) | ☐ | ☐ | ☐ |
+| Design patterns (2+ per system, justified) | ☐ | ☐ | ☐ |
+| Concurrency handling | ☐ | ☐ | ☐ |
+| Extensibility (add feature, no existing code changed) | ☐ | ☐ | ☐ |
+| Code quality (injected deps, interfaces, clean names) | ☐ | ☐ | ☐ |
+
+**Gate to continue:** 5/6 "Solid". If < 5: Week 20 adds 2 more system design sessions before advancing.
+
+**Week 20 sessions:**
+- Monday/Wednesday: Speed verbal drills — all 6 systems, 8 min each
+- Tuesday/Thursday: Notification System + any 1 new system of your choice
+- Saturday: Full LLD round mock (60 min, new system) + Rate Limiter project completion
+
+---
+
+### Weeks 21–22: Advanced DSA — Linked Lists, Stacks, Queues (Depth Not Breadth)
+
+**Why visit these after LLD month?** Coming back to DSA after LLD work refreshes the habit and prevents the common failure mode of LLD blocking DSA performance in interviews.
+
+These data structures are covered in Scaler: Advanced DSA Linear & Non-Linear.
+
+**Week 21 — Linked Lists:**
+
+| # | Problem | Pattern | Why It Matters |
+|---|---|---|---|
+| 1 | Reverse Linked List (LC 206) | Pointer reversal | Foundation — done iteratively and recursively |
+| 2 | Linked List Cycle (LC 141) | Floyd's slow/fast | Cycle detection — applies to graphs too |
+| 3 | Find Duplicate Number (LC 287) | Floyd's on array | Same algorithm, different domain |
+| 4 | Remove Nth from End (LC 19) | Two pointers | N-behind pointer trick |
+| 5 | Merge Two Sorted Lists (LC 21) | Merge | Classic merge step |
+| 6 | LRU Cache (LC 146) | HashMap + Doubly Linked List | Real-world: Redis eviction. LLD + DSA combined. |
+
+**Note on LRU Cache:** This problem sits at the intersection of DSA (HashMap + DLL) and LLD (Cache design). Solve it in both contexts: as a DSA problem (O(1) operations), and as an LLD design (what interfaces would you expose, what patterns apply).
+
+**Week 22 — Stacks and Queues:**
+
+| # | Problem | Pattern | Why It Matters |
+|---|---|---|---|
+| 1 | Valid Parentheses (LC 20) | Stack | Stack for matching — prototype |
+| 2 | Daily Temperatures (LC 739) | Monotonic stack | Next greater element pattern |
+| 3 | Largest Rectangle in Histogram (LC 84) | Monotonic stack | Classic hard — tests full monotonic stack understanding |
+| 4 | Implement Queue Using Stacks (LC 232) | Two stacks | Amortized O(1) — tests stack understanding |
+| 5 | Sliding Window Maximum (LC 239) | Monotonic deque | Deque maintains candidates in window |
+
+---
+
+### Weeks 23–24: Advanced DSA Review + Gate 2 Prep
+
+**Week 23 — Tries + Union-Find (Targeted):**
+
+These two data structures appear in < 10% of interviews individually, but they're surprisingly easy to master and demonstrate depth.
+
+**Tries:**
+
+| # | Problem | Key Insight |
+|---|---|---|
+| 1 | Implement Trie (LC 208) | children[26] array or HashMap. isEnd flag. |
+| 2 | Word Search II (LC 212) | DFS on board + Trie prefix pruning |
+| 3 | Replace Words (LC 648) | Trie for dictionary lookup |
+
+**Union-Find (Disjoint Set Union):**
+
+| # | Problem | Key Insight |
+|---|---|---|
+| 4 | Number of Provinces (LC 547) | Union-find on friendship graph |
+| 5 | Graph Valid Tree (LC 261) | Union-find: no cycle = valid tree |
+| 6 | Redundant Connection (LC 684) | Find the edge that creates a cycle |
+
+**Week 24 — Full DSA Review + Gate 2 Assessment Prep:**
+
+**Monday–Friday:** One problem per session from each pattern (review, not new learning). Speed-drill format: 20–25 minutes per problem.
+
+**Saturday — Gate 2 Mock:**
+- 90 min: 2 Medium + 1 Hard DSA problem
+- Grade: pattern identification speed, TC stated, edge cases covered
+
+---
+
+## PART 5: WEEKS 25–32 — HLD MASTERY
+
+### The HLD Philosophy for SDE-3
+
+At SDE-2 level, HLD is about knowing which components to name (cache, queue, database).
+At SDE-3 level, it's about **owning the trade-off discussion**:
+
+> "I chose eventual consistency here because the read/write ratio is 100:1 and users can tolerate 5-second stale data in their feed. If this were a payment system, I'd require strong consistency and accept the write latency."
+
+That sentence signals SDE-3. Naming Redis doesn't.
+
+**The 4 Core Concepts you must internalize before any case study:**
+1. Caching (where, what, how, invalidation)
+2. Consistency models (strong, eventual, CAP theorem implications)
+3. Database selection (SQL vs NoSQL decision framework)
+4. Async processing (message queues, delivery guarantees)
+
+---
+
+### Week 25: HLD Concept 1 — Caching
+
+**Monday (1.5 hrs):** Types of caching:
+- L1: In-process cache (HashMap in memory — fast, not shared)
+- L2: Remote cache (Redis — shared, slightly slower)
+- L3: CDN (Cloudfront, Fastly — for static assets, API responses at edge)
+Draw request flow through all 3 layers for a typical web request.
+
+**Tuesday (2.5 hrs):**
+- Eviction policies: LRU (recency), LFU (frequency), TTL (time). When to use each.
+- Cache invalidation strategies: write-through (update cache on write), write-back (async), write-around (skip cache on write).
+- **The hardest problem in caching:** Cache stampede (thundering herd). 1000 requests hit cache simultaneously after expiry. Solutions: mutex lock on cache miss, probabilistic early expiration, background refresh.
+
+**Wednesday (1.5 hrs):**
+- Practice: "How would you cache a Twitter feed?" Walk through the decision: what to cache (pre-computed feed for regular users), what not to cache (celebrity feeds — too many writes), TTL, invalidation trigger.
+
+**Thursday (2.5 hrs):**
+- Apply to real HLD: Design URL Shortener — include caching layer. What do you cache? (Hot short codes → redirects). What's your TTL? (24 hours for immutable mappings). What's your invalidation? (Explicit delete on expiry).
+- Document: Full URL Shortener design on paper (API, DB schema, cache, CDN, capacity estimate).
+
+**Saturday (3.0 hrs):**
+- Hour 1: Design URL Shortener verbally (30 min timed). No notes.
+- Hour 1: Mini Redis project — start (GET/SET/DEL/EXPIRE commands, in-memory HashMap).
+- Hour 1: Mini Redis — add TTL check on GET. Verify expiry.
+
+---
+
+### Week 26: HLD Concept 2 — Consistency Models + CAP Theorem
+
+**This is the concept most engineers get wrong.** Not because it's hard — because it's abstract. This week makes it concrete.
+
+**Monday (1.5 hrs):**
+- Strong consistency: every read sees the most recent write. Bank transactions. Booking systems. Requires all replicas to agree before confirming.
+- Eventual consistency: writes propagate to replicas asynchronously. Reads may be stale for a bounded time window. Social feeds. Analytics. Much higher availability.
+- Draw a timeline for both: what does a user see in each model during a network partition?
+
+**Tuesday (2.5 hrs):**
+- CAP Theorem: in a network partition, you must choose Consistency or Availability.
+- Classify 6 systems: PostgreSQL (CP — favors consistency), Cassandra (AP — favors availability), Redis (CP by default), DynamoDB (tunable), Zookeeper (CP), MongoDB (tunable).
+- Memorize the classification — this is a 30-second question in interviews.
+- PACELC: extends CAP to normal operation (no partition). Even without partition, you trade latency for consistency.
+
+**Wednesday (1.5 hrs):**
+- Practice: "When would you choose eventual consistency? Give 3 specific examples with reasoning." (Example: "Twitter likes counter — users tolerate a like count that's a few seconds stale. Eventual consistency gives us 10× better write throughput.")
+
+**Thursday (2.5 hrs):**
+- Design Distributed Rate Limiter — requires consistency decisions. If we use Redis (CP), a brief Redis outage could block all requests. If we use in-memory per-node rate limiting (AP), a user could send 5× the limit by hitting different nodes. State this trade-off explicitly.
+
+**Saturday (3.0 hrs):**
+- Hour 1: Design Rate Limiter verbally, 30 min. Articulate consistency choice.
+- Hour 1: Mini Redis — add LRU eviction (linked hashmap). Test: insert 10 items into 5-item cache.
+- Hour 1: HLD reading: Scaler CAP/PACELC lecture + Master-Slave Replication
+
+---
+
+### Week 27: HLD Concept 3 + 4 — Database Selection + Message Queues
+
+**Database Selection Decision Tree:**
+
+```
+1. Do you need ACID transactions across multiple records?
+   YES → SQL (PostgreSQL, MySQL)
+   
+2. Does your schema change frequently or is it highly variable?
+   YES → NoSQL document (MongoDB)
+   
+3. Do you need to scale horizontally to billions of records?
+   YES → NoSQL (Cassandra, DynamoDB)
+   
+4. Do you need full-text search and ranking?
+   YES → Elasticsearch (not a primary DB — use alongside)
+   
+5. Do you need time-series data (metrics, events)?
+   YES → InfluxDB or Cassandra
+   
+Default for most applications: PostgreSQL. Only deviate when you have a specific reason.
+```
+
+**Message Queue Concepts (Kafka vs RabbitMQ vs SQS):**
+
+| Property | Kafka | RabbitMQ | SQS |
+|---|---|---|---|
+| Delivery guarantee | At-least-once (configurable) | At-least-once | At-least-once |
+| Message persistence | Yes (log-based, replay) | Optional (expires after ack) | Configurable |
+| Throughput | Millions/sec | Thousands/sec | Thousands/sec |
+| Use when | High-throughput event streaming, replay needed | Complex routing, lower volume | Simple queue, AWS native |
+| Key concept to know | Consumer groups, partition offsets | Exchange types, routing keys | Visibility timeout, DLQ |
+
+**Week 27 Daily Plan:**
+- Monday: Database decision tree. Memorize it. Apply to 3 systems you know.
+- Tuesday: Design a system requiring both SQL and NoSQL (e.g., e-commerce: PostgreSQL for transactions, Elasticsearch for product search, Redis for sessions).
+- Wednesday: Message queue fundamentals. Draw producer → broker → consumer flow.
+- Thursday: Design a notification service that sends 10M emails/day. Message queue essential. Design the queue-based architecture with dead letter handling.
+- Saturday: Hour 1 — Design e-commerce platform HLD (new). Hour 1 — Mini Redis TCP server. Hour 1 — HLD reading: Scaler Messaging Queues lecture.
+
+---
+
+### Weeks 28–30: HLD Case Studies — Messenger, News Feed, Typeahead
+
+**One week per system. For each:**
+1. Day 1: Understand the unique challenge (don't design yet)
+2. Days 2–4: Design incrementally (rough → detailed → optimized)
+3. Day 5: Write the design fully in a structured document
+4. Saturday: 30-minute timed verbal design
+
+**Week 28 — Facebook Messenger / WhatsApp:**
+
+The unique challenge: **real-time delivery with offline handling**.
+
+Components: WebSocket gateway (connection service), Message service (store-and-forward), Notification service (for offline users), Message storage (Cassandra — write-heavy, partition by conversation_id), Presence service (Redis — who is online).
+
+Trade-off to articulate: **Push vs Pull.** Push (WebSocket): low latency, requires persistent connection, complex offline handling. Pull (long polling): simpler, higher latency. Decision: push for online users, queue-based notification for offline users.
+
+Scale challenge: 100B messages/day → 1M+/second peak. Cassandra partitioned by conversation_id handles this. Hot partitions (viral chats) addressed by sub-partitioning by time window.
+
+**Week 29 — Twitter/Facebook News Feed:**
+
+The unique challenge: **fan-out at celebrity scale**.
+
+Fan-out-on-write (push): on post, immediately write to all followers' feed caches. Fast reads. Problem: a celebrity with 10M followers → 10M writes per post.
+
+Fan-out-on-read (pull): on load, fetch all posts from followed accounts, merge. No write amplification. Problem: reading 1000 accounts' posts on every feed load is slow.
+
+Real solution (hybrid): push for users with < 10K followers. Pull for celebrity accounts. Merge at read time. Cache the merged feed.
+
+**Week 30 — Google Typeahead:**
+
+The unique challenge: **sub-100ms response for prefix matching**.
+
+Key components: Trie data structure (in-memory, prefix lookup), Top-K ranking (frequency + recency weighted), CDN caching (cache suggestions per prefix at the edge, update hourly), Data aggregation (batch processing of search logs to update trie daily).
+
+Trade-off: Real-time trie updates vs batch updates. Real-time: stale within seconds. Batch: stale for up to 1 hour. For autocomplete, hourly stale is acceptable. "Breaking news" terms can be handled by a real-time overlay on top of the daily batch trie.
+
+---
+
+### Weeks 31–32: Uber, YouTube + GATE 2 — Rock Solid
+
+**Week 31 — Uber / Ride-Sharing:**
+
+The unique challenge: **real-time geo-matching at millisecond latency**.
+
+Driver location: updated every 5 seconds. At 10M active drivers: 10M × 0.2/sec = 2M writes/second to driver location store (Redis sorted set by geohash).
+
+Matching: "find nearest 5 available drivers." Geohash range query on Redis. Return sorted by ETA (not just distance — road network matters).
+
+Dispatch: push available ride request to matched drivers. First to accept gets the ride.
+
+**Week 32 — YouTube + GATE 2:**
+
+**YouTube focus:** Transcoding pipeline. CDN. Adaptive bitrate streaming. Hot vs cold storage.
+
+Upload flow: Client → chunked upload API → raw video stored in S3 → message queue triggers → transcoding workers → multiple resolutions in S3 → CDN nodes pull on first request → serve from edge.
+
+Adaptive Bitrate Streaming: player requests a manifest file (HLS/DASH), downloads video in small chunks, switches quality based on measured bandwidth.
+
+### GATE 2 ASSESSMENT — Week 32
+
+**Test conditions:** One 4-hour session. Three back-to-back rounds.
+
+**Round 1 (50 min) — DSA (2 Hard problems):**
+- Problem 1: DP or Graph Hard
+- Problem 2: Heap or Backtracking Hard
+Threshold: 2/2 solved with TC, edge cases, at least 1 optimization discussed.
+
+**Round 2 (60 min) — LLD:**
+- New system: "Design a Food Ordering System (Swiggy/DoorDash)"
+Threshold: SOLID-compliant, 3 patterns, concurrency handled, extensibility demonstrated.
+
+**Round 3 (50 min) — HLD:**
+- "Design WhatsApp"
+Threshold: 6-step framework, capacity estimate, 3 component deep dives, 3 trade-offs articulated.
+
+**Gate 2 Pass Criteria — FAANG/Tier-1 Ready:**
+- ✅ DSA: Both Hard problems solved with full analysis
+- ✅ LLD: All 6 rubric dimensions at "Hire" or above
+- ✅ HLD: Trade-offs, scale discussion, consistency choice justified
+
+---
+
+## PART 6: WEEKS 33–36 — CONSOLIDATION + OFFERS
+
+### The Goal of These 4 Weeks
+
+You are interview-ready by Week 32. Weeks 33–36 are not about learning new material. They are about:
+
+1. Converting preparation into performance under pressure
+2. Eliminating the last 20% of gaps (behavioral, company-specific, communication style)
+3. Managing the application + interview pipeline
+4. Negotiating offers from a position of strength
+
+---
+
+### Week 33: Full Pipeline Simulations (3 per week)
+
+**Monday — DSA Pattern Refresh:**
+- 2 problems from your weakest DSA patterns. Timed.
+- Write complexity immediately. No looking up.
+
+**Tuesday — Full Pipeline Simulation #1:**
+- Round 1: DSA (45 min)
+- Round 2: LLD (60 min)
+- Debrief immediately after. Score every dimension.
+
+**Wednesday — Debrief and Fix:**
+- Fix the lowest-scoring dimension from Tuesday's simulation.
+- Write 1 additional STAR story.
+
+**Thursday — Full Pipeline Simulation #2:**
+- Round 1: HLD (50 min)
+- Round 2: Behavioral (30 min — answer 4 STAR questions out loud)
+
+**Friday — Weak Spot Drill:**
+- Based on this week's mocks: 2 problems from weakest DSA pattern, 1 verbal LLD of weakest system.
+
+**Saturday — Full 3-Round Simulation:**
+- DSA (45 min) → LLD (60 min) → HLD (50 min) → debrief (30 min)
+
+---
+
+### Week 34: Company-Specific Preparation
+
+**Each company tier has a different emphasis:**
+
+| Company | DSA Weight | LLD Weight | HLD Weight | Special Focus |
+|---|---|---|---|---|
+| Google | High (Hard) | Medium | High | Scalability + algorithm optimization |
+| Meta | High (Medium-Hard) | High | High | Product-scale systems (Feed, Messenger, Graph) |
+| Amazon | Medium-Hard | Medium | High | Leadership Principles behavioral (critical) |
+| Stripe | Hard | Very High | High | Financial systems, correctness, edge cases |
+| Airbnb | Medium-Hard | High | High | Booking, consistency, user experience |
+| Flipkart | Medium | Very High | Medium | Machine coding is the primary filter |
+| Razorpay | Medium | Very High | Medium | Payment systems, LLD of financial flows |
+
+**This week:** Research your top 3 target companies. Find their Glassdoor interview reports. Identify what their specific hard rounds look like.
+
+**Days:** 3 targeted mock sessions (1 per target company). Simulate their specific round format.
+
+---
+
+### Week 35: Behavioral Mastery
+
+**The 8 STAR Stories — Written, Rehearsed, Natural:**
+
+| # | Story | SDE-3 Signal |
+|---|---|---|
+| 1 | Architecture decision you owned, later revised | Ownership + learning velocity |
+| 2 | A system you deliberately simplified | Judgment + pragmatism |
+| 3 | Disagreed with tech lead — with data, changed outcome | Courage + data-driven thinking |
+| 4 | Mentored someone from zero to shipping | Leadership multiplier |
+| 5 | Production incident: full ownership, root cause, prevention | Accountability |
+| 6 | Delivered with changing/incomplete requirements | Ambiguity tolerance |
+| 7 | Changed technical direction based on metrics | Adaptability |
+| 8 | Performance bottleneck: diagnosed, fixed, quantified | Technical depth |
+
+**Your Frontend → SDE-3 Narrative (practice until natural):**
+
+> "I've been a Senior Frontend Engineer owning the architecture and performance of production React/Next.js applications — including state management at scale, API contract design, rendering pipeline optimization, and real-time features via WebSockets. Over the last 9 months, I've deliberately expanded into backend and distributed systems — building a consistent hashing library, a production-grade rate limiter, and a mini Redis implementation to make these concepts tactile rather than theoretical. The transition isn't from zero — it's formalizing systems reasoning I've been doing informally."
+
+---
+
+### Week 36: Final Sprint + Offers
+
+**Monday–Wednesday:** One mock interview per day (alternating DSA/LLD/HLD). No new material.
+
+**Thursday:** System design flashcard review — all 8 case studies × 5 minutes each.
+
+**Friday:** Interview day checklist:
+- Questions to ask the interviewer (at SDE-3, your questions signal seniority)
+- Systems to avoid overcomplicating
+- Trade-off phrases to have ready
+- How to redirect when stuck ("Let me think about this differently — if we frame it as an X problem...")
+
+**Saturday:** Rest. Genuinely. You've done 36 weeks of consistent work. Trust the preparation.
+
+**Application Timeline:**
+
+```
+Weeks 17–20:  Update LinkedIn. Apply to late-stage startups (Gate 1 passed).
+Week 21–24:   Apply to Tier 2 Indian product companies (Flipkart, Razorpay, Zepto).
+              Use these as on-site practice — real stakes, slightly lower bar.
+Week 25–28:   Apply to Tier 2 international (Atlassian, Twilio, Cloudflare).
+Week 29–32:   Apply to Tier 1 FAANG + unicorns (Meta, Amazon, Stripe, Airbnb).
+Week 33–36:   Schedule all on-sites in same 2-week window.
+              Competing offers = leverage = better compensation.
+```
+
+---
+
+## PART 7: 3 MONTHLY PROJECTS — FULL SPECIFICATIONS
+
+### Project 1: Consistent Hashing Ring (Months 1–2, Weeks 1–8)
+
+**Sessions:** Every Saturday, 45–60 minutes of project time.
+
+**Why:** Consistent hashing appears in every HLD discussion involving sharding, caching, or distributed storage. Building it makes the virtual node problem real ("why do we need 150 virtual nodes per server? Because without them, removing one server rebalances 50% of keys"). This insight is not achievable by reading — only by building.
+
+**Build schedule:**
+- Weeks 1–2: Basic ring implementation (addNode, getNodeForKey using MD5 hash)
+- Weeks 3–4: Virtual nodes (each real node maps to N virtual nodes)
+- Weeks 5–6: Replication (getReplicationNodes for N-way replication)
+- Weeks 7–8: Load distribution metric + README
+
+**Final deliverable:**
+```
+ConsistentHashRing<T>:
+  addNode(nodeId: string, weight: int = 150)
+  removeNode(nodeId: string)
+  getNodeForKey(key: string) → nodeId
+  getReplicationNodes(key: string, count: int) → nodeId[]
+  getLoadDistribution() → Map<nodeId, percentageOfKeys>
+  getKeyCount() → int
+  
+README includes:
+  - Why consistent hashing (motivation)
+  - Why virtual nodes (with load distribution data)
+  - Time complexity of each operation
+  - Example: how a Redis Cluster would use this
+```
+
+---
+
+### Project 2: Production-Grade Rate Limiter (Months 3–4, Weeks 9–20)
+
+**Sessions:** Saturday project slot during LLD-heavy weeks.
+
+**Why:** This project bridges LLD (class design, patterns, thread safety) and HLD (distributed state, Redis, at-scale reasoning). It's the same artifact in two contexts — rare and valuable for portfolio and interviews.
+
+**Build schedule:**
+- Weeks 9–10: IRateLimiter interface + TokenBucketRateLimiter (thread-safe, in-process)
+- Weeks 11–12: SlidingWindowRateLimiter (timestamp log approach)
+- Weeks 13–14: RateLimiterFactory (config-based instantiation, Factory pattern)
+- Weeks 15–16: RateLimitedService (Decorator that wraps any service)
+- Weeks 17–18: Unit tests including concurrent access tests
+- Weeks 19–20: Distributed extension design (how this moves to Redis — document only, don't implement)
+
+**Final deliverable:**
+```
+IRateLimiter:
+  isAllowed(userId: string, action: string) → boolean
+
+TokenBucketRateLimiter implements IRateLimiter:
+  (Thread-safe. Bucket per user. Refill on interval.)
+
+SlidingWindowRateLimiter implements IRateLimiter:
+  (Track timestamps. Evict expired. Count window.)
+
+RateLimiterFactory:
+  create(type: "token_bucket" | "sliding_window", config) → IRateLimiter
+
+RateLimitedService<T extends Service>:  // Decorator
+  constructor(service: T, limiter: IRateLimiter)
+  
+README includes:
+  - LLD design decisions (SOLID compliance, patterns)
+  - Thread safety analysis (what breaks without synchronization)
+  - Distributed extension: how this becomes a Redis-backed service
+  - Load test results (concurrent requests, observed behavior)
+```
+
+---
+
+### Project 3: Mini Distributed Cache — Redis Lite (Months 5–6, Weeks 21–36)
+
+**Sessions:** Saturday project slot during HLD-heavy weeks.
+
+**Why:** Caching internals (LRU eviction, TTL, TCP protocol) transform HLD discussions from abstract to concrete. "When I built LRU eviction from scratch, I understood why Redis uses a linked hashmap — O(1) insert, delete, and ordering. That made the cache invalidation trade-offs we're discussing now tangible."
+
+**Build schedule:**
+- Weeks 21–22: In-memory store (HashMap). Implement: GET, SET, DEL.
+- Weeks 23–24: TTL support (EXPIRE command, check on GET, background cleanup).
+- Weeks 25–26: LRU eviction (linked hashmap. O(1) operations. Verify with capacity test.)
+- Weeks 27–28: TCP server (accept string commands, parse, execute, return response).
+- Weeks 29–30: HSET/HGET (hash data type — demonstrates multiple data type support).
+- Weeks 31–32: LPUSH/LPOP (list data type).
+- Weeks 33–36: Persistence snapshot (write to file every N seconds, restore on startup). README finalization.
+
+**Final deliverable:**
+```
+Supported commands:
+  GET key
+  SET key value
+  SET key value EX seconds
+  DEL key
+  EXPIRE key seconds
+  TTL key
+  HSET key field value
+  HGET key field
+  LPUSH key value
+  LPOP key
+  
+Implementation features:
+  - LRU eviction with configurable capacity
+  - TTL expiry (lazy + periodic)
+  - TCP server (accepts raw string commands)
+  - Snapshot persistence
+  
+README includes:
+  - LRU implementation: why linked hashmap (O(1) all operations)
+  - How this compares to Redis (what's simplified, what's realistic)
+  - Benchmarks: operations per second at different capacities
+  - What Redis adds that this doesn't (persistence options, replication, clustering)
+```
+
+---
+
+## PART 8: COMPLETE PROBLEM REFERENCE
+
+### All 50 DSA Problems — Organized by Pattern and Week
+
+**Two Pointers + Sliding Window (Weeks 2–3)**
+
+| # | Problem | LC | Week | Difficulty | Pattern Variant |
+|---|---|---|---|---|---|
+| 1 | Two Sum II | 167 | 2 | Easy | Convergent two pointers (sorted) |
+| 2 | Valid Palindrome | 125 | 2 | Easy | Two pointers + char validation |
+| 3 | 3Sum | 15 | 2 | Medium | Sort + outer loop + inner two pointers |
+| 4 | 4Sum | 18 | 2 | Medium | Two outer loops + two pointers |
+| 5 | Trapping Rain Water | 42 | 4 | Hard | Left/right max tracking |
+| 6 | Longest Substring Without Repeating | 3 | 3 | Medium | Dynamic sliding window |
+| 7 | Minimum Window Substring | 76 | 3 | Hard | Two frequency maps |
+| 8 | Minimum Size Subarray Sum | 209 | 3 | Medium | Dynamic window, shrink for condition |
+| 9 | Max Consecutive Ones III | 1004 | 3 | Medium | Window with at-most k flips |
+| 10 | Count Subarrays with Product < K | 713 | 4 | Medium | Multiplicative window |
+
+**Arrays + HashMap + Prefix Sum (Weeks 1, 4)**
+
+| # | Problem | LC | Week | Difficulty | Key Insight |
+|---|---|---|---|---|---|
+| 11 | Running Sum of 1D Array | 1480 | 1 | Easy | Build prefix sum array |
+| 12 | Subarray Sum Equals K | 560 | 1 | Medium | count of (sum-k) in prefix map |
+| 13 | Product of Array Except Self | 238 | 1 | Medium | Left pass × right pass |
+| 14 | Two Sum | 1 | 4 | Easy | Complement lookup |
+| 15 | Group Anagrams | 49 | 4 | Medium | Canonical key = sorted string |
+| 16 | Longest Consecutive Sequence | 128 | 4 | Medium | Sequence start detection |
+| 17 | Top K Frequent Elements | 347 | 4 | Medium | Frequency map + bucket sort |
+
+**Trees (Weeks 5–6)**
+
+| # | Problem | LC | Week | Difficulty | Tree Pattern |
+|---|---|---|---|---|---|
+| 18 | Maximum Depth | 104 | 5 | Easy | DFS post-order |
+| 19 | Symmetric Tree | 101 | 5 | Easy | DFS mirror check |
+| 20 | Path Sum | 112 | 5 | Easy | DFS pre-order |
+| 21 | Path Sum II | 113 | 5 | Medium | DFS + backtrack |
+| 22 | Level Order Traversal | 102 | 5 | Medium | BFS |
+| 23 | Right Side View | 199 | 5 | Medium | BFS last per level |
+| 24 | Validate BST | 98 | 6 | Medium | DFS with bounds |
+| 25 | LCA of BST | 235 | 6 | Medium | BST property |
+| 26 | LCA of Binary Tree | 236 | 6 | Medium | DFS post-order bubble |
+| 27 | Kth Smallest in BST | 230 | 6 | Medium | Inorder = sorted |
+| 28 | Max Path Sum | 124 | 6 | Hard | Global max + one-sided return |
+| 29 | Serialize and Deserialize | 297 | 6 | Hard | BFS encoding |
+
+**Dynamic Programming (Weeks 7–8)**
+
+| # | Problem | LC | Week | Difficulty | DP Type |
+|---|---|---|---|---|---|
+| 30 | Climbing Stairs | 70 | 7 | Easy | 1D, simple recurrence |
+| 31 | House Robber | 198 | 7 | Medium | 1D, state machine |
+| 32 | Coin Change | 322 | 7 | Medium | 1D, unbounded knapsack |
+| 33 | Longest Increasing Subsequence | 300 | 7 | Medium | 1D, patience sort |
+| 34 | Word Break | 139 | 7 | Medium | 1D, set membership |
+| 35 | Unique Paths | 62 | 8 | Medium | 2D, grid DP |
+| 36 | Edit Distance | 72 | 8 | Hard | 2D, string DP |
+| 37 | Longest Common Subsequence | 1143 | 8 | Medium | 2D, string DP |
+| 38 | 0/1 Knapsack | classic | 8 | Medium | 2D, classic knapsack |
+| 39 | Partition Equal Subset Sum | 416 | 8 | Medium | 2D, knapsack variant |
+
+**Graphs (Weeks 9–10)**
+
+| # | Problem | LC | Week | Difficulty | Graph Pattern |
+|---|---|---|---|---|---|
+| 40 | Number of Islands | 200 | 9 | Medium | DFS/BFS flood fill |
+| 41 | Rotting Oranges | 994 | 9 | Medium | Multi-source BFS |
+| 42 | Pacific Atlantic Water Flow | 417 | 9 | Medium | Reverse BFS from boundary |
+| 43 | Word Ladder | 127 | 9 | Hard | BFS state space |
+| 44 | Course Schedule | 207 | 10 | Medium | Topological sort (cycle detection) |
+| 45 | Course Schedule II | 210 | 10 | Medium | Topological sort (return order) |
+| 46 | Alien Dictionary | 269 | 10 | Hard | Topo sort on characters |
+
+**Binary Search (Weeks 11–12)**
+
+| # | Problem | LC | Week | Difficulty | BS Type |
+|---|---|---|---|---|---|
+| 47 | Search in Rotated Sorted Array | 33 | 11 | Medium | Modified BS |
+| 48 | Find First and Last Position | 34 | 11 | Medium | Left/right boundary |
+| 49 | Koko Eating Bananas | 875 | 12 | Medium | BS on answer |
+| 50 | Split Array Largest Sum | 410 | 12 | Hard | BS on answer (hard) |
+
+**Heaps + Backtracking (Weeks 13–14)**
+
+| # | Problem | LC | Week | Difficulty | Pattern |
+|---|---|---|---|---|---|
+| 51 | Kth Largest Element | 215 | 13 | Medium | Min-heap of size k |
+| 52 | Merge K Sorted Lists | 23 | 13 | Hard | K-way merge heap |
+| 53 | Find Median from Data Stream | 295 | 13 | Hard | Two heaps |
+| 54 | Subsets | 78 | 14 | Medium | Backtrack (include/exclude) |
+| 55 | Permutations | 46 | 14 | Medium | Backtrack (used set) |
+| 56 | Combination Sum | 39 | 14 | Medium | Backtrack (allow repeat) |
+
+**Advanced (Weeks 21–24)**
+
+| # | Problem | LC | Week | Difficulty | Pattern |
+|---|---|---|---|---|---|
+| 57 | LRU Cache | 146 | 21 | Medium | HashMap + DLL |
+| 58 | Largest Rectangle in Histogram | 84 | 22 | Hard | Monotonic stack |
+| 59 | Sliding Window Maximum | 239 | 22 | Hard | Monotonic deque |
+| 60 | Implement Trie | 208 | 23 | Medium | Trie structure |
+
+---
+
+## PART 9: THE CONSISTENCY SYSTEM
+
+**The single thing that will determine whether this plan works is not intelligence. It is whether you show up every week for 36 weeks.**
+
+### The Weekly Ritual
+
+Every Sunday, before the week begins, write 3 things:
+
+1. **What I'm learning this week** (1 sentence per day)
+2. **The 1 problem I will not skip** (your non-negotiable for the week)
+3. **How I'll know I improved** (a specific measurable outcome)
+
+Every Friday, write 3 things:
+
+1. **What did I internalize this week?** (If you can't write this, you consumed but didn't learn)
+2. **What is my weakest point right now?** (Honest — this guides Saturday's session)
+3. **What do I carry into next week?** (Unfinished problems, concepts to re-visit)
+
+### The Streak Principle
+
+You will miss days. This is guaranteed. The rule is not "never miss." The rule is: **never miss twice in a row.**
+
+One missed day = life happens. Two consecutive missed days = a streak that starts dying. The moment you identify two consecutive missed days, the recovery is simple: cut the next planned session in half and do it immediately.
+
+### The Teach-Back Schedule
+
+Every 2 weeks, pick one topic and write a 1-page explanation as if teaching a junior engineer. These become your portfolio artifacts — blog posts, internal team sessions, or interview narratives. The act of writing them is the learning mechanism.
+
+Topics to cover over 36 weeks (one every 2 weeks):
+1. "Two Pointers — Why the Invariant Holds"
+2. "Prefix Sum — O(1) Range Queries Explained"
+3. "Why Tree Problems Feel Hard (And How to Make Them Easy)"
+4. "DP From Scratch: The 3 Questions You Must Answer First"
+5. "Topological Sort: Dependency Resolution in Code"
+6. "SOLID Principles: A Frontend Engineer's Translation"
+7. "Strategy vs State vs Factory — When to Use Each"
+8. "Consistent Hashing: Why Not Just Use Modulo?"
+9. "CAP Theorem: What It Actually Means in Practice"
+10. "Cache Invalidation: The Hard Problem"
+11. "Message Queues: Why Not Just Call the API Directly?"
+12. "Fan-out at Scale: Twitter's Engineering Decision"
+13. "How to Approach Any System Design Problem"
+14. "Concurrency Bugs I Found in My Own Code"
+15. "What 36 Weeks of Deliberate Practice Changed About My Thinking"
+
+---
+
+## APPENDIX: QUICK REFERENCE TABLES
+
+### DSA Pattern Recognition Triggers
+
+| Trigger in Problem Statement | Pattern |
+|---|---|
+| "contiguous subarray" + condition on sum/product/length | Sliding Window |
+| Two elements from sorted array | Convergent Two Pointers |
+| Cycle detection in linked list or array | Floyd's slow/fast |
+| "path in tree" "max path" "sum of path" | DFS (post-order, return value) |
+| "level" "shortest path" "minimum steps" | BFS |
+| "dependencies" "prerequisites" "ordering" | Topological Sort |
+| "top K" "kth largest/smallest" | Heap (min-heap of size K) |
+| "minimum/maximum value that satisfies some condition" | Binary Search on Answer |
+| "all combinations" "all permutations" "generate all" | Backtracking |
+| "count ways" "max value" "min cost" + overlapping subproblems | DP |
+| "connected components" "group" "union" | BFS/DFS or Union-Find |
+| "prefix matching" "autocomplete" | Trie |
+
+### HLD Component Selection
+
+| Requirement | Component | Avoid |
+|---|---|---|
+| Sub-ms reads on hot data | Redis | SQL for this |
+| Full-text search + ranking | Elasticsearch | SQL LIKE |
+| High write throughput (millions/sec) | Cassandra, Kafka | PostgreSQL for this scale |
+| ACID transactions, moderate scale | PostgreSQL | Cassandra (no joins, no transactions) |
+| Async job processing | Kafka, SQS, RabbitMQ | Synchronous HTTP calls |
+| Geo-proximity queries | PostGIS, Redis GEOADD | Plain lat/lng in SQL |
+| Global low-latency static content | CDN | Origin server |
+| Distributed locking | Redis SETNX, ZooKeeper | Application-level mutex |
+| Session storage | Redis | SQL (too slow for session lookup) |
+
+### LLD Pattern Decision Guide
+
+| When you hear "add [X] without changing existing code" | → OCP. Factory or Strategy pattern. |
+|---|---|
+| When you hear "notify multiple systems when [event] occurs" | → Observer / Event Bus |
+| When you hear "this object needs to go through multiple states" | → State Machine |
+| When you hear "build this object step by step with optional fields" | → Builder |
+| When you hear "we need to undo the last N actions" | → Command |
+| When you hear "we need one shared instance across the system" | → Singleton (use sparingly) |
+| When you hear "wrap this with logging/retry/rate limiting" | → Decorator |
+| When you hear "create objects without specifying exact class" | → Factory / Abstract Factory |
+
+### Monthly Measurable Outcomes
+
+| End of Week | Observable Proof You're on Track |
+|---|---|
+| 4 | 25 problems solved. TC/SC stated for each without prompting. |
+| 8 | Two Pointers + Sliding Window + Prefix Sum + Trees: Medium solved in < 22 min. |
+| 12 | Binary Search on Answer, Topological Sort: can identify and apply pattern cold. |
+| 16 | Gate 1 passed: 2/3 DSA, 1 LLD, HLD vocabulary. First interview applications. |
+| 20 | All 6 LLD systems: verbal design in 10 min, code in 35 min, SOLID audit passed. |
+| 24 | Full DSA coverage: Heaps, Backtracking, Tries, Union-Find all pattern-recognized. |
+| 28 | 4 HLD concepts deeply understood, 3 systems designed with trade-off discussions. |
+| 32 | Gate 2 passed: Hard DSA, new LLD, full HLD with WhatsApp design under pressure. |
+| 36 | Competing offers. Interview pipeline active. Negotiating from strength. |
+
+---
+
+**End of 36-Week Deep Mastery Plan**
+
+**Commitment:** 13.5 hours/week × 36 weeks = 486 hours of deliberate practice.  
+**Output:** SDE-3/Architect interview readiness at FAANG/Tier-1 level.  
+**Method:** Depth over breadth. Consistency over intensity. Articulation as the test of mastery.
